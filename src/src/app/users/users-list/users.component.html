@@ -1,0 +1,23 @@
+<div class="user-form">
+    <app-user-form (newUserEvent)="addUser($event)"></app-user-form>
+</div>
+
+<div class="user-list">
+    <h2>Users table</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Имя пользователя</th>
+                <th>Дата рождения</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.birth_year}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
