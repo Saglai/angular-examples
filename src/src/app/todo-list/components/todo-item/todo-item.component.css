@@ -1,0 +1,13 @@
+.todo-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid teal;
+    padding: 15px;
+    width: 400px;
+}
+
+.todo-complete {
+    text-decoration: line-through;
+}

@@ -8,19 +8,25 @@ import { UsersService } from './users/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TodoListModule } from './todo-list/todo-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserFormComponent
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    TodoListModule
+  ],
+  exports: [
+    ReactiveFormsModule,
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
