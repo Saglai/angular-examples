@@ -24,7 +24,7 @@ export class TodoItemComponent {
         this.isChecked = false;
     }
 
-    deleteTodo(value: TodoModel) {
-        this.deleteTodoEvent.emit(value);
+    deleteTodo(todo: TodoModel) {
+        this.deleteTodoEvent.emit(todo);
     }
 }

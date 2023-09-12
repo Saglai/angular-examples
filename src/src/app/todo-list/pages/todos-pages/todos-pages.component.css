@@ -1,0 +1,17 @@
+button {
+    border: 1px solid teal;
+    padding: 8px 15px;
+    align-self: flex-end;
+    margin-right: 27px;
+    margin-top: 15px;
+}
+
+.container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    align-self: center;
+}

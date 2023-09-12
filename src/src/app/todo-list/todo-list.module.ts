@@ -4,12 +4,14 @@ import { TodoItemComponent } from "./components/todo-item/todo-item.components";
 import { BrowserModule } from "@angular/platform-browser";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TodosPagesComponent } from './pages/todos-pages/todos-pages.component';
+import { TodoFormComponent } from './components/todo-form/todo-form/todo-form.component';
 
 @NgModule({
     declarations: [
         TodoListComponent,
         TodoItemComponent,
-        TodosPagesComponent
+        TodosPagesComponent,
+        TodoFormComponent
     ],
     imports: [
         BrowserModule,
@@ -17,6 +19,6 @@ import { TodosPagesComponent } from './pages/todos-pages/todos-pages.component';
         FormsModule
     ],
     providers: [],
-    exports: [TodoListComponent,]
+    exports: [TodosPagesComponent]
 })
 export class TodoListModule {}

@@ -1,0 +1,10 @@
+<div class="container">
+    <button (click)="shouldAdd = true">+</button>
+    <app-todo-form *ngIf="shouldAdd"
+    class="form" 
+    (addTodoEvent)="addTodo($event)"
+    (cancelFormEvent)="shouldAdd = $event"
+    ></app-todo-form>
+    <app-todo-list [todoList]="todoList" (deleteTodoEvent)="deleteTodo($event)"></app-todo-list>
+</div>
+

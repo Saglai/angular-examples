@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../../services/todo.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoModel } from '../../models/todo.model';
 
 @Component({
@@ -7,20 +6,14 @@ import { TodoModel } from '../../models/todo.model';
     templateUrl: './todo-list.component.html',
     styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent implements OnInit{
-    todoList: TodoModel[] = [];
+export class TodoListComponent {
 
-    constructor(private todoService: TodoService) {}
+    constructor() {}
 
-    ngOnInit(): void {
-        this.getPosts();
-    }
+    @Input() todoList!: TodoModel[];
+    @Output() deleteTodoEvent = new EventEmitter<TodoModel>();
 
-    getPosts() {
-        this.todoList = this.todoService.getTodos();
-    }
-
-    deleteTodo(todo: TodoModel) {
-        this.todoList = this.todoList.filter(todoInArray => todoInArray != todo);
+    passOutput(todo: TodoModel) {
+        this.deleteTodoEvent.emit(todo);
     }
 }
