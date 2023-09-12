@@ -1,0 +1,27 @@
+.todo-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid teal;
+    width: 200px;
+    height: 120px;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+h4, input, .btns {
+    margin-top: 10px;
+}
+
+.btns {
+    margin-bottom: 15px;
+    align-self: flex-end;
+}
+
+button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
