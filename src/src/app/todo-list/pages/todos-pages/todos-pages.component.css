@@ -2,12 +2,11 @@ button {
     border: 1px solid teal;
     padding: 8px 15px;
     align-self: flex-end;
-    margin-right: 27px;
     margin-top: 15px;
 }
 
 .container {
-    width: 500px;
+    width: 570px;
     display: flex;
     flex-direction: column;
 }

@@ -1,10 +1,17 @@
 <div class="container">
-    <button (click)="shouldAdd = true">+</button>
-    <app-todo-form *ngIf="shouldAdd"
-    class="form" 
-    (addTodoEvent)="addTodo($event)"
-    (cancelFormEvent)="shouldAdd = $event"
+    <button (click)="sendAddFormData()">+</button>
+
+    <app-todo-form 
+    class="form"
+    *ngIf="shouldShowForm"
+    (addNewTodoEvent)="addTodo($event)"
+    (cancelFormEvent)="shouldShowForm = $event"
     ></app-todo-form>
-    <app-todo-list [todoList]="todoList" (deleteTodoEvent)="deleteTodo($event)"></app-todo-list>
+
+    <app-todo-list 
+    [todoList]="todoList" 
+    (deleteTodoEvent)="deleteTodo($event)"
+    (showEditFormEvent)="sendEditFormData()"
+    ></app-todo-list>
 </div>
 

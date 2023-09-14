@@ -1,11 +1,15 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { TodoModel } from "../models/todo.model";
+import { BehaviorSubject } from "rxjs";
+import { FormModel } from "../models/form.model";
 
 @Injectable({
     providedIn: 'root'
 })
 export class TodoService {
+    formData: BehaviorSubject<FormModel>
+    todo!: TodoModel
+
     private todoList: TodoModel[] = [
         {
           "userId": 1,
@@ -33,10 +37,23 @@ export class TodoService {
         }
     ]
 
-
-    constructor(private http: HttpClient) {}
+    constructor() {
+      this.formData = new BehaviorSubject(new FormModel);
+    }
 
     getTodos(): TodoModel[] {
         return this.todoList
+    }
+
+    updateFormData(data: FormModel) {
+      this.formData.next(data);
+    }
+
+    setSelectedTodo(recievedTodo: TodoModel) {
+      this.todo = recievedTodo;
+    }
+
+    getSelectedTodo() {
+      return this.todo;
     }
 }

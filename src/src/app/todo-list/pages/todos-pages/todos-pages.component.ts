@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../../services/todo.service';
 import { TodoModel } from '../../models/todo.model';
+import { FormModel } from '../../models/form.model';
 
 @Component({
   selector: 'app-todos-pages',
@@ -8,14 +9,17 @@ import { TodoModel } from '../../models/todo.model';
   styleUrls: ['./todos-pages.component.css']
 })
 export class TodosPagesComponent implements OnInit {
-  shouldAdd = false;
+  shouldShowForm = false;
   todoList: TodoModel[] = [];
+  formData = new FormModel();
+  addFormData: FormModel = {name: 'Add a new todo', leftButtonName: 'Add'}
+  editFormData: FormModel = {name: 'Edit the todo', leftButtonName: 'Edit'}
 
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
     this.getPosts();
-}
+  }
 
   getPosts() {
     this.todoList = this.todoService.getTodos();
@@ -27,5 +31,15 @@ export class TodosPagesComponent implements OnInit {
 
   addTodo(todo: TodoModel) {
     this.todoList.push(todo);
+  }
+
+  sendAddFormData() {
+    this.shouldShowForm = true;
+    this.todoService.updateFormData(this.addFormData);
+  }
+
+  sendEditFormData() {
+    this.shouldShowForm = true;
+    this.todoService.updateFormData(this.editFormData);
   }
 }

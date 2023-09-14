@@ -1,3 +1,7 @@
 <ul *ngFor="let todo of todoList">
-    <app-todo-item [todoItem]="todo" (deleteTodoEvent)="passOutput($event)"></app-todo-item>
+    <app-todo-item 
+    [todoItem]="todo" 
+    (deleteTodoEvent)="passOutput($event)"
+    (showEditFormEvent)="passOutput($event)"
+    ></app-todo-item>
 </ul>

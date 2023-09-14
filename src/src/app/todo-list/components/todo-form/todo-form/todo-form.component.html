@@ -1,8 +1,12 @@
 <div class="todo-form-container">
-    <h4>Add a new todo</h4>
-    <input id="input" type="text" [(ngModel)]="title">
+    <h4> {{  currentFormData.name }}</h4>
+    <input 
+    id="input" 
+    type="text" 
+    [(ngModel)]="title"
+    >
     <div class="btns"> 
-        <button (click)="addTodo()">Add</button>
+        <button (click)="changeTodo()">{{ currentFormData.leftButtonName }}</button>
         <button (click)="cancelForm()">Cancel</button>
     </div>
 </div>

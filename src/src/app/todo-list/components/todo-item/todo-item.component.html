@@ -1,5 +1,9 @@
 <div class="todo-item-container">
     <input type="checkbox" (click)="onCheckChange($event)">
     <div [ngClass]="isChecked ? 'todo-complete' : ''"> {{ todoItem.title }}</div>
-    <button type="button" (click)="deleteTodo(todoItem)">Delete</button>
+    <div class="btns">
+        <button type="button" (click)="deleteTodo(todoItem)">Delete</button>
+        <button type="button" (click)="sendEditFormData(todoItem)">Edit</button>
+    </div>
+    
 </div>

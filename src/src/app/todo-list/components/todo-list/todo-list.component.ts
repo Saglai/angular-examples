@@ -12,8 +12,15 @@ export class TodoListComponent {
 
     @Input() todoList!: TodoModel[];
     @Output() deleteTodoEvent = new EventEmitter<TodoModel>();
+    @Output() showEditFormEvent = new EventEmitter();
 
-    passOutput(todo: TodoModel) {
-        this.deleteTodoEvent.emit(todo);
+    passOutput(value: any) {
+
+        if (value) {
+            this.deleteTodoEvent.emit(value);
+            return
+        }
+
+        this.showEditFormEvent.emit();
     }
 }

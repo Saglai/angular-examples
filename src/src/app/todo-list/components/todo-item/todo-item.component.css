@@ -5,9 +5,13 @@
     align-items: center;
     border: 1px solid teal;
     padding: 15px;
-    width: 400px;
+    width: 450px;
 }
 
 .todo-complete {
     text-decoration: line-through;
+}
+
+button {
+    margin: 5px;
 }

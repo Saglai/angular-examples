@@ -23,11 +23,7 @@ import { TodoListModule } from './todo-list/todo-list.module';
     ReactiveFormsModule,
     TodoListModule
   ],
-  exports: [
-    ReactiveFormsModule,
-    BrowserModule,
-    HttpClientModule,
-  ],
+  exports: [],
   providers: [UsersService],
   bootstrap: [AppComponent]
 })
