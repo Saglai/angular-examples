@@ -5,6 +5,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from '@angular/forms';
 import { TodosPagesComponent } from './pages/todos-pages/todos-pages.component';
 import { TodoFormComponent } from './components/todo-form/todo-form/todo-form.component';
+import { TodoListRoutingModule } from "./todo-list-routing.module";
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { TodoFormComponent } from './components/todo-form/todo-form/todo-form.co
     ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        TodoListRoutingModule
     ],
     providers: [],
     exports: [TodosPagesComponent]
